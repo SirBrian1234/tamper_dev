@@ -1,7 +1,8 @@
 # tamper_dev
 This repository keeps the code for the tampering device project.
 
-You may view the project's main page, and learn about it from here ...
+You may view the project's main page, and learn about it from here:
+https://kostiskag.wordpress.com/2017/02/05/monitor-your-stuff-when-you-are-away-with-a-raspberry-pi-based-tampering-device/
 
 This repository uses code from two other git repositories:
 
