@@ -8,8 +8,8 @@ from L3GD20 import L3GD20
 import Adafruit_LSM303
 
 def send_email(text):
-  #send_email = False
-  send_email = True
+  send_email = False
+  #send_email = True
   st = datetime.datetime.fromtimestamp(time.time()).strftime('%d-%m-%Y %H:%M:%S')
   msg = MIMEText(text+"\nThis event was captured at: "+st)
 
