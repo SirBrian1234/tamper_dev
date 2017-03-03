@@ -4,17 +4,16 @@ import smtplib
 # Import the email modules we'll need
 from email.mime.text import MIMEText
 
+source = 'source.email@gmail.com'
+password = 'your_password'
+
+destination = 'destination.email@anything.com'
+msg['Subject'] = 'HELLO! This is a test email.'
+msg['From'] = source
+msg['To'] = destination
 msg = MIMEText("Hello World!")
 
-me = 'source.email@gmail.com'
-you = 'destination.email@gmail.com'
-
-msg['Subject'] = 'HELLO!'
-msg['From'] = me
-msg['To'] = you
-
 s = smtplib.SMTP_SSL('smtp.gmail.com:465')
-s.login('source.email@gmail.com','your_password')
-s.sendmail(me, [you], msg.as_string())
+s.login(source,password)
+s.sendmail(source, [destination], msg.as_string())
 s.quit()
-

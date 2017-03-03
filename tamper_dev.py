@@ -7,23 +7,24 @@ import RPi.GPIO as GPIO
 from L3GD20 import L3GD20
 import Adafruit_LSM303
 
-def send_email(text):
-  send_email = False
-  #send_email = True
+def send_email(text):  
+  send_email = True
+  #send_email = False
+  
+  source = 'source.email@gmail.com'
+  password = 'your_password'
+
+  destination = 'destination.email@anything.com'
+  msg['Subject'] = 'Tampering Device'
+  msg['From'] = source
+  msg['To'] = destination
   st = datetime.datetime.fromtimestamp(time.time()).strftime('%d-%m-%Y %H:%M:%S')
   msg = MIMEText(text+"\nThis event was captured at: "+st)
 
-  me = 'source.email@gmail.com'
-  you = 'destination.email@gmail.com'
-
-  msg['Subject'] = 'Tampering Device'
-  msg['From'] = me
-  msg['To'] = you
-
   if send_email:
     s = smtplib.SMTP_SSL('smtp.gmail.com:465')
-    s.login('source.email@gmail.com','your_password')
-    s.sendmail(me, [you], msg.as_string())
+    s.login(source,password)
+    s.sendmail(source, [destination], msg.as_string())
     s.quit()
   
   #time.sleep(2)
