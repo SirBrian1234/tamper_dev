@@ -8,10 +8,11 @@ source = 'source.email@gmail.com'
 password = 'your_password'
 
 destination = 'destination.email@anything.com'
+
+msg = MIMEText("Hello World!")
 msg['Subject'] = 'HELLO! This is a test email.'
 msg['From'] = source
 msg['To'] = destination
-msg = MIMEText("Hello World!")
 
 s = smtplib.SMTP_SSL('smtp.gmail.com:465')
 s.login(source,password)

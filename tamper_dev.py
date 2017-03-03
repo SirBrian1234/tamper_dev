@@ -15,11 +15,12 @@ def send_email(text):
   password = 'your_password'
 
   destination = 'destination.email@anything.com'
-  msg['Subject'] = 'Tampering Device'
-  msg['From'] = source
-  msg['To'] = destination
+  
   st = datetime.datetime.fromtimestamp(time.time()).strftime('%d-%m-%Y %H:%M:%S')
   msg = MIMEText(text+"\nThis event was captured at: "+st)
+  msg['Subject'] = 'Tampering Device'
+  msg['From'] = source
+  msg['To'] = destination    
 
   if send_email:
     s = smtplib.SMTP_SSL('smtp.gmail.com:465')
