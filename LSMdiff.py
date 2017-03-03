@@ -39,7 +39,7 @@ while True:
     
 
     if (diff_accel_x or diff_accel_y or diff_accel_z) > 10:
-    	print('Apisteuto kounithike!!!')
+    	print('Unbelivable it moved!!!')
 
 
     diff_accel_x = accel_x
